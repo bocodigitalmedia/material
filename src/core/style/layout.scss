@@ -95,7 +95,7 @@
   @if $name == null { $name : '';          }
   @if $name != ''   { $name : '-#{$name}'; }
 
-  .layout#{$name}, .layout#{$name}-column, .layout#{$name}-row {
+  .mlayout#{$name}, .mlayout#{$name}-column, .mlayout#{$name}-row {
     box-sizing: border-box;
     display: -webkit-box;
     display: -webkit-flex;
@@ -103,8 +103,8 @@
     display: -ms-flexbox;
     display: flex;
   }
-  .layout#{$name}-column {  flex-direction: column;     }
-  .layout#{$name}-row    {  flex-direction: row;        }
+  .mlayout#{$name}-column {  flex-direction: column;     }
+  .mlayout#{$name}-row    {  flex-direction: row;        }
 }
 
 @mixin flex-properties-for-name($name: null) {
@@ -136,7 +136,7 @@
       box-sizing: border-box;
     }
 
-    .layout-row > .#{$flexName}-#{$i * 5} {
+    .mlayout-row > .#{$flexName}-#{$i * 5} {
       flex: 1 1 100%;
       max-width: #{$value};
       max-height: 100%;
@@ -146,14 +146,14 @@
       @if $i == 0 {  min-width: 0;  }
     }
 
-    .layout-column > .#{$flexName}-#{$i * 5} {
+    .mlayout-column > .#{$flexName}-#{$i * 5} {
       flex: 1 1 100%;
       max-width: 100%;
       max-height: #{$value};
       box-sizing: border-box;
     }
 
-    .layout#{$name}-row > .#{$flexName}-#{$i * 5} {
+    .mlayout#{$name}-row > .#{$flexName}-#{$i * 5} {
       flex: 1 1 100%;
       max-width: #{$value};
       max-height: 100%;
@@ -163,7 +163,7 @@
       @if $i == 0 {  min-width: 0;  }
     }
 
-    .layout#{$name}-column > .#{$flexName}-#{$i * 5} {
+    .mlayout#{$name}-column > .#{$flexName}-#{$i * 5} {
       flex: 1 1 100%;
       max-width: 100%;
       max-height: #{$value};
@@ -174,17 +174,17 @@
     }
   }
 
-  .layout-row {
+  .mlayout-row {
     > .#{$flexName}-33 { flex: 1 1 33.33%;  max-width: 33.33%;  max-height: 100%; box-sizing: border-box; }
     > .#{$flexName}-66 { flex: 1 1 66.66%;  max-width: 66.66%;  max-height: 100%; box-sizing: border-box; }
   }
 
-  .layout-column {
+  .mlayout-column {
     > .#{$flexName}-33 { flex: 1 1 33.33%;  max-width: 100%;  max-height: 33.33%; box-sizing: border-box; }
     > .#{$flexName}-66 { flex: 1 1 66.66%;  max-width: 100%;  max-height: 66.66%; box-sizing: border-box; }
   }
 
-  .layout#{$name}-row {
+  .mlayout#{$name}-row {
     > .#{$flexName}-33 { flex: 1 1 100%;  max-width: 33.33%;  max-height: 100%; box-sizing: border-box; }
     > .#{$flexName}-66 { flex: 1 1 100%;  max-width: 66.66%;  max-height: 100%; box-sizing: border-box; }
 
@@ -193,7 +193,7 @@
 
   }
 
-  .layout#{$name}-column {
+  .mlayout#{$name}-column {
     > .#{$flexName}-33 { flex: 1 1 100%;  max-width: 100%;  max-height: 33.33%; box-sizing: border-box; }
     > .#{$flexName}-66 { flex: 1 1 100%;  max-width: 100%;  max-height: 66.66%; box-sizing: border-box; }
 
@@ -340,86 +340,86 @@
 @mixin layout-padding-margin() {
 
   // NOTE: these`> *` selectors should only be applied for layout="row" or layout="column" children !!
-  .layout-padding-sm > *,
-  .layout-padding    > .flex-sm
+  .mlayout-padding-sm > *,
+  .mlayout-padding    > .flex-sm
   {
     padding: $layout-gutter-width / 4;
   }
 
-  .layout-padding,
-  .layout-padding-gt-sm,
-  .layout-padding-md,
+  .mlayout-padding,
+  .mlayout-padding-gt-sm,
+  .mlayout-padding-md,
 
   // NOTE: these`> *` selectors should only be applied for layout="row" or layout="column" children !!
-  .layout-padding        > *,
-  .layout-padding-gt-sm  > *,
-  .layout-padding-md     > *,
+  .mlayout-padding        > *,
+  .mlayout-padding-gt-sm  > *,
+  .mlayout-padding-md     > *,
 
-  .layout-padding        > .flex,
-  .layout-padding        > .flex-gt-sm,
-  .layout-padding        > .flex-md
+  .mlayout-padding        > .flex,
+  .mlayout-padding        > .flex-gt-sm,
+  .mlayout-padding        > .flex-md
   {
     padding: $layout-gutter-width / 2;
   }
 
   // NOTE: these`> *` selectors should only be applied for layout="row" or layout="column" children !!
-  .layout-padding-gt-md  > *,
-  .layout-padding-lg     > *,
-  .layout-padding-gt-lg  > *,
+  .mlayout-padding-gt-md  > *,
+  .mlayout-padding-lg     > *,
+  .mlayout-padding-gt-lg  > *,
 
-  .layout-padding        > .flex-gt-md,
-  .layout-padding        > .flex-lg,
-  .layout-padding        > .flex-lg,
-  .layout-padding        > .flex-gt-lg
+  .mlayout-padding        > .flex-gt-md,
+  .mlayout-padding        > .flex-lg,
+  .mlayout-padding        > .flex-lg,
+  .mlayout-padding        > .flex-gt-lg
   {
     padding: $layout-gutter-width / 1;
   }
 
   // Margin enhancements
 
-  .layout-margin-sm      > *,
-  .layout-margin         > .flex-sm
+  .mlayout-margin-sm      > *,
+  .mlayout-margin         > .flex-sm
   {
     margin: $layout-gutter-width / 4;
   }
 
-  .layout-margin,
-  .layout-margin-gt-sm,
-  .layout-margin-md,
+  .mlayout-margin,
+  .mlayout-margin-gt-sm,
+  .mlayout-margin-md,
 
   // NOTE: these`> *` selectors should only be applied for layout="row" or layout="column" children !!
-  .layout-margin         > *,
-  .layout-margin-gt-sm   > *,
-  .layout-margin-md      > *,
+  .mlayout-margin         > *,
+  .mlayout-margin-gt-sm   > *,
+  .mlayout-margin-md      > *,
 
-  .layout-margin         > .flex,
-  .layout-margin         > .flex-gt-sm,
-  .layout-margin         > .flex-md
+  .mlayout-margin         > .flex,
+  .mlayout-margin         > .flex-gt-sm,
+  .mlayout-margin         > .flex-md
   {
     margin: $layout-gutter-width / 2;
   }
 
   // NOTE: these`> *` selectors should only be applied for layout="row" or layout="column" children !!
-  .layout-margin-gt-md  > *,
-  .layout-margin-lg     > *,
-  .layout-margin-gt-lg  > *,
+  .mlayout-margin-gt-md  > *,
+  .mlayout-margin-lg     > *,
+  .mlayout-margin-gt-lg  > *,
 
-  .layout-margin        > .flex-gt-md,
-  .layout-margin        > .flex-lg,
-  .layout-margin        > .flex-gt-lg
+  .mlayout-margin        > .flex-gt-md,
+  .mlayout-margin        > .flex-lg,
+  .mlayout-margin        > .flex-gt-lg
   {
     margin: $layout-gutter-width / 1;
   }
 
-  .layout-wrap {
+  .mlayout-wrap {
     flex-wrap: wrap;
   }
 
-  .layout-nowrap {
+  .mlayout-nowrap {
       flex-wrap: nowrap;
   }
 
-  .layout-fill {
+  .mlayout-fill {
     margin: 0;
     width: 100%;
     min-height: 100%;

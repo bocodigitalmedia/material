@@ -78,7 +78,7 @@
 
     // NOTE: these are also defined in constants::MEDIA_PRIORITY and constants::MEDIA
     var BREAKPOINTS     = [ "", "xs", "gt-xs", "sm", "gt-sm", "md", "gt-md", "lg", "gt-lg", "xl", "print" ];
-    var API_WITH_VALUES = [ "layout", "flex", "flex-order", "flex-offset", "layout-align" ];
+    var API_WITH_VALUES = [ "mlayout", "flex", "flex-order", "flex-offset", "layout-align" ];
     var API_NO_VALUES   = [ "show", "hide", "layout-padding", "layout-margin" ];
 
 
@@ -411,7 +411,7 @@
 
     if (!needsInterpolation(value)) {
       switch (className.replace(SUFFIXES,"")) {
-        case 'layout'        :
+        case 'mlayout'        :
           if ( !findIn(value, LAYOUT_OPTIONS) ) {
             value = LAYOUT_OPTIONS[0];    // 'row';
           }
